@@ -1,0 +1,89 @@
+body{
+    background-image: url("./assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.links{
+    text-decoration: none;
+    color: rgb(228, 228, 228);
+}
+
+.links:hover{
+    color: teal;
+    text-decoration: none;
+}
+
+.links:visited{
+    background-color: yellowgreen;
+}
+
+.search_input{
+    background-color: rgb(56, 56, 56);
+    color: white;
+}
+
+.profile{
+    border-radius: 3px;
+}
+
+.tabs{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs button{
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    height: 4rem;
+    border: 0;
+    cursor: pointer;
+}
+
+.tabs button:hover{
+    background-color: rgb(255, 187, 0);
+}
+
+.tabs button:active{
+    background-color: yellow;
+}
+
+.tabcontent {
+    display: none;
+    border: none;
+}
+
+#leftSection{
+    margin-left: 1.5%;
+    height: 50%;
+    margin-right: 5%;
+    background-color: rgba(56, 56, 56,0.8);
+}
+
+.flexLeft{
+    display: flex;
+}
+
+.sectionImage{
+    height: 50px;
+    flex: 1;
+}
+
+.topOperatorInfo{
+    flex: 4;
+}
+
+#rightSection{
+    background-color: rgba(56, 56, 56, 0.8);
+}
+
+.actionTitle{
+    color: rgb(170, 168, 168);
+}
+
+.actionStatus{
+    font-weight: bold;
+}
