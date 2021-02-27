@@ -13,13 +13,14 @@ var search = document.querySelector(".search_icon");
 
 var name = "stepbro"
 apiFetch(name)
+stat(name)
 search.addEventListener('click',() => {
-    var newName = document.getElementById("username")
+    var newName = document.querySelector("#username")
     if (newName.innerHTML != null ){
-        apiFetch(newName)
+        stat(newName.value)
+        apiFetch(newName.value)
+        
     }
-
-    
 }) 
 
 
@@ -41,6 +42,11 @@ function apiFetch(name){
     .then(response => response.json())
     .then(function(data){
         let i ;
+        heading.innerHTML = '<th scope="col">Weapons</th>'
+        kills.innerHTML = '<th scope="row">KILLS</th>'
+        shotsFired.innerHTML ='<th scope="row">SHOTS FIRED</th>'
+        shotsHit.innerHTML = '<th scope="row">SHOTS HIT</th>'
+        shotsAccuracy.innerHTML = '<th scope="row">SHOTS ACCURACY</th>'
         var dataElems = data["data"];
         for(i=0;i<Object.keys(dataElems).length;i++){
             heading.innerHTML += `<th scope="col">${dataElems[i]["attributes"]["key"].toUpperCase()}</th>`
@@ -54,27 +60,29 @@ function apiFetch(name){
     .catch(error => {
         console.log(error);
 });
+}
+function stat(name){
 
-fetch(
-    `https://public-api.tracker.gg/v2/csgo/standard/search?TRN-Api-Key=de89f9b3-26ff-433d-bcec-e3bbb477dfdd&platform=steam&query=${name}`, {
-        headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0',
-            Accept: 'application/json',
-            'Accept-Encoding': 'gzip',
-            'TRN-Api-Key': 'de89f9b3-26ff-433d-bcec-e3bbb477dfdd',
-        },
-        mode:'cors',
-    }
+    fetch(
+        `https://public-api.tracker.gg/v2/csgo/standard/search?TRN-Api-Key=de89f9b3-26ff-433d-bcec-e3bbb477dfdd&platform=steam&query=${name}`, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0',
+                Accept: 'application/json',
+                'Accept-Encoding': 'gzip',
+                'TRN-Api-Key': 'de89f9b3-26ff-433d-bcec-e3bbb477dfdd',
+            },
+            mode:'cors',
+        }
 
-)
-.then(response => response.json())
-    .then(function(data){
-        profileDiv.innerHTML = `<img class="profile mr-3 float-left" src="${data["data"][0]["avatarUrl"]}" alt="">
-    <h2>${name.toUpperCase()}</h2>`;
-    }
     )
-    .catch(error => {
-        console.log(error);
-});
+    .then(response => response.json())
+        .then(function(data){
+            profileDiv.innerHTML = `<img class="profile mr-3 float-left" src="${data["data"][0]["avatarUrl"]}" alt="">
+        <h2>${name.toUpperCase()}</h2>`;
+        }
+        )
+        .catch(error => {
+            console.log(error);
+    });
 }
 
