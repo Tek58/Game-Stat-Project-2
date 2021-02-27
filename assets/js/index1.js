@@ -16,41 +16,9 @@ fetch(
 
     )
     .then(response => response.json())
-    .then(function(posts) {
-            let output = `<img class="profile mr-3 float-left" src="${posts["data"]["platformInfo"]["avatarUrl"]}" alt="" width="12%" height="100%">
-            <h3>Step Bro</h3>`
+    .then(data => console.log(data)
 
-            let killOutput = `
-            <h2>Kills</h2>
-            <div class="row my-5 killsRow">
-            <div class="col-sm-4 killsClass">
-            <h4>Percentile</h4>
-            <h3 class="actionTitle text-primary">${posts["data"]["segments"][0]["stats"]["kills"]["percentile"]}</h3></div>
-
-            <div class="col-sm-4 killsClass">
-            <h4>Value</h4>
-            <h3 class="actionTitle text-primary">${posts["data"]["segments"][0]["stats"]["kills"]["displayValue"]}</h3></div>
-            <div class="col-sm-4 killsClass">
-            <h4>Category</h4>
-            <h3 class="actionTitle text-primary">${posts["data"]["segments"][0]["stats"]["kills"]["category"]}</h3></div>
-            <div class="col-sm-4 killsClass">
-            <h4>Percentile</h4>
-            <h3 class="actionTitle text-primary">${posts["data"]["segments"][0]["stats"]["deaths"]["percentile"]}</h3></div>
-
-            <div class="col-sm-4 killsClass">
-            <h4>Value</h4>
-            <h3 class="actionTitle text-primary">${posts["data"]["segments"][0]["stats"]["deaths"]["displayValue"]}</h3></div>
-            <div class="col-sm-4 killsClass">
-            <h4>Category</h4>
-            <h3 class="actionTitle text-primary">${posts["data"]["segments"][0]["stats"]["deaths"]["category"]}</h3></div>
-            </div>
-            `
-        ;
-        
-        n.innerHTML = output;
-        m.innerHTML = killOutput;
-
-    })
+    )
     .catch(error => {
         console.log(error);
 });
