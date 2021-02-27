@@ -2,6 +2,7 @@ let myHeaders = new Headers();
 myHeaders.append('Content-Type', 'image/jpeg');
 
 var heading = document.querySelector("#headings")
+var headingWapons = document.querySelector('#headingsWeapons')
 var kills = document.querySelector("#killsRow");
 var shotsFired = document.querySelector("#shotsFiredRow");
 var shotsHit = document.querySelector("#shotshitRow");
@@ -47,9 +48,11 @@ function apiFetch(name){
         shotsFired.innerHTML ='<th scope="row">SHOTS FIRED</th>'
         shotsHit.innerHTML = '<th scope="row">SHOTS HIT</th>'
         shotsAccuracy.innerHTML = '<th scope="row">SHOTS ACCURACY</th>'
+        headingWapons.innerHTML = '<th scope="col"></th>'
         var dataElems = data["data"];
         for(i=0;i<Object.keys(dataElems).length;i++){
             heading.innerHTML += `<th scope="col">${dataElems[i]["attributes"]["key"].toUpperCase()}</th>`
+            headingWapons.innerHTML += `<th scope="col"><img src="${dataElems[i]["metadata"]["imageUrl"]}" alt=""></th>`
             kills.innerHTML += `<td scope="col">${dataElems[i]["stats"]["kills"]["displayValue"]}</td>`
             shotsFired.innerHTML += `<td scope="col">${dataElems[i]["stats"]["shotsFired"]["displayValue"]}</td>`
             shotsHit.innerHTML += `<td scope="col">${dataElems[i]["stats"]["shotsHit"]["displayValue"]}</td>`
