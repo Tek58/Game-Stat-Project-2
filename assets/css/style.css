@@ -1,0 +1,70 @@
+body {
+    background-image:url('../images/wp7314437.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    opacity: 0.8;
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+}
+.profileDiv{
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+hr {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  overflow: hidden;
+}
+
+
+dt {
+  font-weight: 800;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+.card{
+    border: 0;
+    background-color: rgba(0, 0, 0, 0); 
+    color:rgb(255, 255, 255);
+}
+.tableBodyContent{
+    background-color: rgba(0, 0, 0, 0); 
+    color: rgb(255, 255, 255);
+}
+.avatarTitles{
+    color: rgb(0, 0, 0);
+}
+
+table {
+  background-color: black; 
+  color:rgb(255, 244, 244);
+}
+.avatarHolder{
+    background-color: rgba(0, 0, 0, 0); 
+    color:rgb(255, 255, 255);
+}
+
+.wapons{
+    margin-left: 1%;
+}
+.footer{
+    color: white;
+    font-style: italic;
+    margin-top: 1%;
+    margin-bottom: 0.5%;
+}
