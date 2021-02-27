@@ -23,14 +23,23 @@ hr {
   overflow: hidden;
 }
 
+#headings th{
+  background-color: rgb(255, 255, 255);
+  color: black;
 
+}
 dt {
   font-weight: 800;
+  text-align: center;
+}
+td{
+  text-align: center;
 }
 
 dd {
   margin-bottom: 0.5rem;
   margin-left: 0;
+  text-align: center;
 }
 
 img {
@@ -53,6 +62,7 @@ img {
 table {
   background-color: black; 
   color:rgb(255, 244, 244);
+
 }
 .avatarHolder{
     background-color: rgba(0, 0, 0, 0); 
@@ -67,4 +77,14 @@ table {
     font-style: italic;
     margin-top: 1%;
     margin-bottom: 0.5%;
+}
+.profile{
+  width: 15%;
+  height: 30%;
+  border-radius: 30%;
+}
+.search_icon{
+  position: absolute;
+  right: 15%;
+  margin-top: 0.7%;
 }
