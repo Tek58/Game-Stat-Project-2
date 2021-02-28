@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./assets/css/index1.css">
 </head>
 <body>
-    <div class="container-fluid"></div>
+    <div class="container-fluid">
     <nav>
         <div class="float-left my-3">
             <a class="links" href="index1.html"><h4>Game stats</h4></a>
@@ -38,281 +38,33 @@
 
         </div>
  
+        
 
-        <div class="summaryTab">
-            <div class="row">
+    <div id="box">
+        <div class="tabs">
+            <button class="tablinks" onclick="openTab(event, 'disp-Summary','code-box-1')" id="defaultOpen-1">Summary</button>
+            <button class="tablinks" onclick="openTab(event, 'disp-Detail','code-box-1')">Details</button>
+        </div>
 
-                <div class="col-md-3" id="leftSection">
-                    <h2>Operations</h2>
-                    <div class="flexLeft my-3">
-                        <img src="./assets/images/pp.jpg" class="sectionImage mr-2" alt="">
-                        <div class="topOperatorInfo">
-                            <h5>valkyrie</h5>
-                            <p>Hey there</p>
-                            <p>lorem</p>
-                        </div>
-                    </div>
-        
-                    <div class="flexLeft my-3">
-                        <img src="./assets/images/pp.jpg" class="sectionImage mr-2" alt="">
-                        <div class="topOperatorInfo">
-                            <h5>valkyrie</h5>
-                            <p>Hey there</p>
-                            <p>lorem</p>
-                        </div>
-                    </div>
-        
-                    <div class="flexLeft my-3">
-                        <img src="./assets/images/pp.jpg" class="sectionImage mr-2" alt="">
-                        <div class="topOperatorInfo">
-                            <h5>valkyrie</h5>
-                            <p>Hey there</p>
-                            <p>lorem</p>
-                        </div>
-                    </div>
-        
-                    <div class="flexLeft my-3">
-                        <img src="./assets/images/pp.jpg" class="sectionImage mr-2" alt="">
-                        <div class="topOperatorInfo">
-                            <h5>valkyrie</h5>
-                            <p>Hey there</p>
-                            <p>lorem</p>
-                        </div>
-                    </div>
-    
-                    <a class="ml-5" href="">View All Operators >></a>
-                    
-                </div>
-                
-                <div class="col-sm-8 mb-5" id="rightSection">
-                    
-                    <!-- Overall Table -->
-                    <div id="rightSecOverall">
-                        <h3>Overall</h3>
-                        <hr color="white">
-                        <div class="row my-5">
-                            <div class="col-sm-4 killsClass">
-                                <p class="actionTitle">K/D Ratio</p>
-                                
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-            
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-            
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-        
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <!-- Kill Table -->
-    
-                    <div id="rightSecKill">
-                        <h3>Kills</h3>
-                        <hr color="white">
-    
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-            
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-            
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-    
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <!-- Team Table -->
-    
-                    <div id="rightSecTeam">
-                        <h3>Team Play</h3>
-                        <hr color="white">
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-            
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-            
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-    
-                        <div class="row my-5">
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-            
-                            <div class="col-sm-4">
-                                <p class="actionTitle">K/D Ratio</p>
-                                <p class="actionStatus">0.62</p>
-                            </div>
-                        </div>
-    
-                    </div>
+        <pre id="disp-Summary" class="sg-tab-content">
+            <div class="summaryTab">
+                <div class="row">
+
                 </div>
             </div>
-        </div>    
-    </div>
+        </pre>
 
+        <pre id="disp-Detail" class="sg-tab-content">
+            <div class="summaryTab">
+                <div class="row">
+
+                </div>
+            </div> 
+        </pre>
+
+    </div>
+        
+    
     <footer class="footer text-center">
         All Rights Reserved . Designed and Developed by Dream Team.
     </footer>
