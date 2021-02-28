@@ -40,95 +40,83 @@
     
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid" id="fourCols">
         <div class="row">
             <!-- column -->
-            <div class="col-12">
+            <div class="col">
                 <div class="card">
                     <div class="table-responsive">
                         <table class="table v-middle" >
                             <thead>
-                                <tr class="bg-light avatarTitles">
-                                    <th >Products</th>
+                                <tr class="bg-light avatarTitles" >
+                                    <th ></th>
+                                    <th >Value</th>
+                                    <th >Percentile</th>
                                 </tr>
                             </thead>
-                            <tbody class="tableBodyContent">
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="">
-                                                <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Single Use</td>
-                                    <td>John Doe</td>
-                                    <td>
-                                        <label class="label label-danger">Angular</label>
-                                    </td>
-                                    <td>46</td>
-                                    <td>356</td>
-                                    <td>
-                                        <h5 class="m-b-0">$2850.06</h5>
-                                    </td>
+                            <tbody class="tableBodyContent" id="dispTime">
+                                
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Col -->
+            <div class="col">
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table v-middle" >
+                            <thead>
+                                <tr class="bg-light avatarTitles" >
+                                    <th ></th>
+                                    <th >Value</th>
+                                    <th >Percentile</th>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="">
-                                                <h4 class="m-b-0 font-16">Monster Admin</h4>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Single Use</td>
-                                    <td>Venessa Fern</td>
-                                    <td>
-                                        <label class="label label-info">Vue Js</label>
-                                    </td>
-                                    <td>46</td>
-                                    <td>356</td>
-                                    <td>
-                                        <h5 class="m-b-0">$2850.06</h5>
-                                    </td>
+                            </thead>
+                            <tbody class="tableBodyContent" id="secondTable">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third col -->
+            <div class="col">
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table v-middle" >
+                            <thead>
+                                <tr class="bg-light avatarTitles" >
+                                    <th ></th>
+                                    <th >Value</th>
+                                    <th >Percentile</th>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="">
-                                                <h4 class="m-b-0 font-16">Material Pro Admin</h4>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Single Use</td>
-                                    <td>John Doe</td>
-                                    <td>
-                                        <label class="label label-success">Bootstrap</label>
-                                    </td>
-                                    <td>46</td>
-                                    <td>356</td>
-                                    <td>
-                                        <h5 class="m-b-0">$2850.06</h5>
-                                    </td>
+                            </thead>
+                            <tbody class="tableBodyContent" id="thirdTable">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fourth col -->
+            <div class="col">
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table v-middle" >
+                            <thead>
+                                <tr class="bg-light avatarTitles" >
+                                    <th ></th>
+                                    <th >Value</th>
+                                    <th >Percentile</th>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="">
-                                                <h4 class="m-b-0 font-16">Ample Admin</h4>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Single Use</td>
-                                    <td>John Doe</td>
-                                    <td>
-                                        <label class="label label-purple">React</label>
-                                    </td>
-                                    <td>46</td>
-                                    <td>356</td>
-                                    <td>
-                                        <h5 class="m-b-0">$2850.06</h5>
-                                    </td>
-                                </tr>
+                            </thead>
+                            <tbody class="tableBodyContent" id="fourthTable">
+                                
                             </tbody>
                         </table>
                     </div>
@@ -136,16 +124,13 @@
             </div>
         </div>
     </div>
-    <div></div>
-
-
-    
+        
     <hr>
     <div class="row container-fluid">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Wapons and Kills</h4>
+                    <h4 class="card-title">Weapons and Kills</h4>
                 </div>
                 <div class="table-responsive wapons">
                     <table class="table " >
@@ -158,10 +143,15 @@
                             </tr>
                         </thead>
                         <tbody >
+                            <tr class="tableBodyContent" id="CatagoryRow">
+                                <th scope="row">CATAGORY</th>
+                                
+                            </tr>
                             <tr class="tableBodyContent" id="killsRow">
                                 <th scope="row">KILLS</th>
                                 
                             </tr>
+                            
                             <tr class="tableBodyContent" id="shotsFiredRow">
                                 <th scope="row" >SHOTS FIRED</th>
                                 

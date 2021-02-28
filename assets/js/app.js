@@ -10,19 +10,24 @@ var shotsHit = document.querySelector("#shotshitRow");
 var shotsAccuracy = document.querySelector("#shotsAccuracyRow");
 var profileDiv = document.querySelector(".profileDiv");
 var search = document.querySelector(".search_icon");
-var titles = document.querySelector(".avatarTitles")
+var titles = document.querySelector(".avatarTitles");
+var timePlayed = document.getElementById("dispTime");
+var secTable = document.getElementById("secondTable");
+var thirdTab = document.getElementById("thirdTable");
+var fouthTab = document.getElementById("fourthTable");
 
 
 
 var name = "stepbro"
 apiFetch(name)
 stat(name)
+detail(name)
 search.addEventListener('click',() => {
     var newName = document.querySelector("#username")
     if (newName.innerHTML != null ){
         stat(newName.value)
         apiFetch(newName.value)
-        
+        detail(newName.value)
     }
 }) 
 
@@ -106,8 +111,54 @@ function detail(name){
     )
     .then(response => response.json())
         .then(function(data){
-            profileDiv.innerHTML = `<img class="profile mr-3 float-left" src="${data["data"][0]["avatarUrl"]}" alt="">
-        <h2>${name.toUpperCase()}</h2>`;
+            timePlayed.innerHTML = ''
+            secTable.innerHTML = ''
+            thirdTab.innerHTML = ''
+            fouthTab.innerHTML = ''
+            var statsData =  data["data"]["segments"][0]["stats"]
+            for(let i=0;i<5;i++){
+                timePlayed.innerHTML += 
+                `<tr>
+                <th>
+                    <h4 class="m-b-0 font-16">${statsData[Object.keys(statsData)[i]]["displayName"]}</h4>
+                </th>
+                <td>${statsData[Object.keys(statsData)[i]]["displayValue"]}</td>
+                <td>${statsData[Object.keys(statsData)[i]]["percentile"]}</td>
+                </tr>`
+            } 
+            for(let i=5;i<10;i++){
+                secTable.innerHTML += 
+                `<tr>
+                <th>
+                    <h4 class="m-b-0 font-16">${statsData[Object.keys(statsData)[i]]["displayName"]}</h4>
+                </th>
+                <td>${statsData[Object.keys(statsData)[i]]["displayValue"]}</td>
+                <td>${statsData[Object.keys(statsData)[i]]["percentile"]}</td>
+                </tr>`
+            }
+
+            for(let i=10;i<15;i++){
+                thirdTab.innerHTML += 
+                `<tr>
+                <th>
+                    <h4 class="m-b-0 font-16">${statsData[Object.keys(statsData)[i]]["displayName"]}</h4>
+                </th>
+                <td>${statsData[Object.keys(statsData)[i]]["displayValue"]}</td>
+                <td>${statsData[Object.keys(statsData)[i]]["percentile"]}</td>
+                </tr>`
+            }
+
+            for(let i=15;i<20;i++){
+                fouthTab.innerHTML += 
+                `<tr>
+                <th>
+                    <h4 class="m-b-0 font-16">${statsData[Object.keys(statsData)[i]]["displayName"]}</h4>
+                </th>
+                <td>${statsData[Object.keys(statsData)[i]]["displayValue"]}</td>
+                <td>${statsData[Object.keys(statsData)[i]]["percentile"]}</td>
+                </tr>`
+            }
+            
         }
         )
         .catch(error => {
