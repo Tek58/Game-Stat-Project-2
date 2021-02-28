@@ -26,9 +26,6 @@ search.addEventListener('click',() => {
     }
 }) 
 
-
-
-
 function apiFetch(name){
     fetch(
         `https://public-api.tracker.gg/v2/csgo/standard/profile/steam/${name}/segments/weapon?TRN-Api-Key=de89f9b3-26ff-433d-bcec-e3bbb477dfdd`, {

@@ -44,16 +44,6 @@ a:hover{
     border-radius: 3px;
 }
 
-#leftSection{
-    margin-left: 1.5%;
-    height: 50%;
-    margin-right: 5%;
-    background-color: rgba(1,1,1,0.7);
-}
-
-.flexLeft{
-    display: flex;
-}
 
 .sectionImage{
     height: 100%;
@@ -61,18 +51,37 @@ a:hover{
     flex: 1;
 }
 
-.topOperatorInfo{
-    flex: 4;
+pre {
+    background-color: #201f1fc4;
+    border: 1px solid #080808b9;
+    position: relative;
+    z-index: 1;
+}
+    
+div.tabs {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
 }
 
-#rightSection{
-    background-color: rgba(5,5,5,0.7);
+div.tabs button {
+    outline: none;
+    background-color: #201f1fc4;
+    color: #ffffff;
+    flex: 1;
 }
 
-.actionTitle{
-    color: rgb(170, 168, 168);
+div.tabs button.sg-current {
+    border-bottom: none !important;
 }
 
-.actionStatus{
-    font-weight: bold;
+.sg-tab-content {
+    display: none;
+    color: white;
+}
+
+div.spacer {
+    /* height: 24px; */
+    margin-bottom: -1px;
+    flex: 3;
 }
