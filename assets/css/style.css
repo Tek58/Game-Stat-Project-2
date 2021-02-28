@@ -62,7 +62,7 @@ img {
 table {
   background-color: black; 
   color:rgb(255, 244, 244);
-
+  border-radius: 5%;
 }
 .avatarHolder{
     background-color: rgba(0, 0, 0, 0); 
@@ -97,4 +97,11 @@ a:hover{
   color: rgb(228, 20, 5);
   text-decoration: none;
 
+}
+.v-middle tbody{
+  text-align: center;
+}
+
+.tableBodyContent th{
+  text-align: left;
 }
