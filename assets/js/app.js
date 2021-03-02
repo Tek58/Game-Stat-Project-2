@@ -116,7 +116,7 @@ function detail(name){
             thirdTab.innerHTML = ''
             fouthTab.innerHTML = ''
             var statsData =  data["data"]["segments"][0]["stats"]
-            for(let i=0;i<5;i++){
+            for(let i=0;i<6;i++){
                 timePlayed.innerHTML += 
                 `<tr>
                 <th>
@@ -126,7 +126,7 @@ function detail(name){
                 <td>${statsData[Object.keys(statsData)[i]]["percentile"]}</td>
                 </tr>`
             } 
-            for(let i=5;i<10;i++){
+            for(let i=6;i<12;i++){
                 secTable.innerHTML += 
                 `<tr>
                 <th>
@@ -137,7 +137,7 @@ function detail(name){
                 </tr>`
             }
 
-            for(let i=10;i<15;i++){
+            for(let i=12;i<17;i++){
                 thirdTab.innerHTML += 
                 `<tr>
                 <th>
@@ -148,7 +148,7 @@ function detail(name){
                 </tr>`
             }
 
-            for(let i=15;i<20;i++){
+            for(let i=17;i<24;i++){
                 fouthTab.innerHTML += 
                 `<tr>
                 <th>

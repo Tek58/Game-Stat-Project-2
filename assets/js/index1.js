@@ -21,23 +21,40 @@ fetch(
         console.log(error);
 });
 
-document.getElementById("defaultOpen-1").click();
+var tabButtons=document.querySelectorAll(".tabContainer .buttonContainer button");
+var tabPanels=document.querySelectorAll(".tabContainer  .tabPanel");
 
-function openTab(evt, tabName, boxName) {    
-    var i, tabcontent, tablinks;
-
-    var box = document.getElementById(boxName)
-
-    tabcontent = box.getElementsByClassName("sg-tab-content");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    tablinks = box.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" sg-current", "");
-    }
-
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " sg-current";
+  function showPanel(panelIndex,colorCode) {
+      tabButtons.forEach(function(node){
+          node.style.backgroundColor="";
+          node.style.color="";
+      });
+  
+  tabPanels.forEach(function(node){
+      node.style.display="none";
+  });
+  tabPanels[panelIndex].style.display="block";
+  tabPanels[panelIndex].style.backgroundColor=colorCode;
 }
+showPanel(0,'');
+
+// document.getElementById("defaultOpen-1").click();
+
+// function openTab(evt, tabName, boxName) {    
+//     var i, tabcontent, tablinks;
+
+//     var box = document.getElementById(boxName)
+
+//     tabcontent = box.getElementsByClassName("sg-tab-content");
+//     for (i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//     }
+
+//     tablinks = box.getElementsByClassName("tablinks");
+//     for (i = 0; i < tablinks.length; i++) {
+//         tablinks[i].className = tablinks[i].className.replace(" sg-current", "");
+//     }
+
+//     document.getElementById(tabName).style.display = "block";
+//     evt.currentTarget.className += " sg-current";
+// }
