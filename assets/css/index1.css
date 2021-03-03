@@ -83,3 +83,32 @@ a:hover{
     bottom: 10px;
     width: 100%;
 }
+#searchPlayer{
+    position: relative;
+    
+}
+.platformContainer{
+    z-index: 100;
+    size: 2px;
+    position: absolute;
+    top: 30%; 
+    right: 20px;
+    font-size: 1em;
+    opacity:.5;
+    color:#0047ab;
+    transition: all 0.4s ease;
+  }
+  .search_input{
+      border-radius: 10px;
+      background: white !important;
+      color: black !important;
+      -webkit-transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+      transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);;
+  }
+  .search_input:focus{
+      border: 2px solid rgb(228, 20, 5);
+}
+  /* .search_input .field:focus-within .icons{
+    opacity: 1;
+  } */
+  
