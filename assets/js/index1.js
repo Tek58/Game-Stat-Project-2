@@ -19,3 +19,13 @@ function collector(name, platform) {
         newName.style.border = "solid 3px red"
     }
 }
+
+xbox.addEventListener('click',()=>{
+    collector(name, "Xbox")
+});
+ps.addEventListener('click',()=>{
+    collector(name, "psn")
+});
+origin.addEventListener('click',()=>{
+    collector(name, "origin")
+});
