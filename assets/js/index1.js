@@ -54,3 +54,72 @@ function search(name, platform){
         legendDisp.innerHTML = ""
             return;
         }
+
+        overview.innerHTML=''
+        
+        profileDiv.innerHTML = `<img class="profile mr-3 float-left" src="${data["data"]["platformInfo"]["avatarUrl"]}" alt="" width="12%" height="100%">
+        <h2>${data["data"]["platformInfo"]["platformUserId"]}</h2>`;
+
+        // Overview part
+        var kil = "-"
+        var level = "-"
+        var dataElems = data["data"]["segments"];
+        if(dataElems[0]["stats"]["kills"]["rank"] != undefined || dataElems[0]["stats"]["kills"]["rank"] != null ){
+            kil = dataElems[0]["stats"]["kills"]["displayValue"]
+        
+        }
+        if(dataElems[0]["stats"]["level"]["rank"] != undefined || dataElems[0]["stats"]["level"]["rank"] != null ){
+            level= dataElems[0]["stats"]["level"]["rank"]
+        }
+        overview.innerHTML += ` <tr>
+                                    <td>Kills</td> 
+                                    <td>${kil}</td>  
+                                    <td>${dataElems[0]["stats"]["kills"]["percentile"]}%</td> 
+                                    <td>${dataElems[0]["stats"]["kills"]["displayValue"]}</td> 
+                                </tr>
+                                
+                                <tr>
+                                    <td>Level</td> 
+                                    <td>${level}</td>  
+                                    <td>${dataElems[0]["stats"]["level"]["percentile"]}%</td> 
+                                    <td>${dataElems[0]["stats"]["level"]["displayValue"]}</td> 
+                                </tr>                              
+                                `
+
+        // legends part
+                                        
+        
+        legendDisp.innerHTML = ""
+        for(i=1;i<dataElems.length;i++){
+            var kills = "-"
+            var matchesPlayed = "-"
+            var damage = "-"
+            if(dataElems[i]["stats"]["kills"] != undefined || dataElems[i]["stats"]["kills"] != null ){
+                kills = dataElems[i]["stats"]["kills"]["displayValue"]
+            
+            }
+            if(dataElems[i]["stats"]["matchesPlayed"] != undefined || dataElems[i]["stats"]["matchesPlayed"] != null ){
+                matchesPlayed = dataElems[i]["stats"]["matchesPlayed"]["displayValue"]
+            }
+            if(dataElems[i]["stats"]["damage"] != undefined || dataElems[i]["stats"]["damage"] != null ){
+                damage = dataElems[i]["stats"]["damage"]["displayValue"]
+            }
+            
+            legendDisp.innerHTML += `<tr>
+                                        <td id="imageTD"><img src="${dataElems[i]["metadata"]["imageUrl"]}" style="width:100%;  border-radius: 10%"></td>
+                                        <td>${dataElems[i]["attributes"]["id"]}</td>
+                                        <td>${dataElems[i]["metadata"]["name"]}</td>  
+                                        <td>${kills}</td>
+                                        <td>${matchesPlayed}</td>  
+                                        <td>${damage}</td>  
+                                        <td>${dataElems[i]["metadata"]["isActive"]}</td> 
+                                    </tr>`;
+                                                                          
+        }
+    }
+        
+    )
+    .catch(error => {
+        console.log(error);
+});
+}
