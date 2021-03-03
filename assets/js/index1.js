@@ -1,60 +1,21 @@
-let myHeaders = new Headers();
-myHeaders.append('Content-Type', 'image/jpeg');
+var legendDisp = document.getElementById("legends");
+var profileDiv = document.querySelector(".profileDiv");
+var overview = document.getElementById("dispTime");
+var xbox = document.querySelector(".xbox");
+var ps = document.querySelector(".psn");
+var origin = document.querySelector(".origin");
 
-fetch(
-        'https://public-api.tracker.gg/v2/csgo/standard/profile/steam/stepbro/segments/weapon?TRN-Api-Key=de89f9b3-26ff-433d-bcec-e3bbb477dfdd', {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0',
-                Accept: 'application/json',
-                'Accept-Encoding': 'gzip',
-                'TRN-Api-Key': 'de89f9b3-26ff-433d-bcec-e3bbb477dfdd',
-            },
-            mode:'cors',
-        }
+var name = "Daltoosh"
 
-    )
-    .then(response => response.json())
-    .then(data => console.log(data)
-
-    )
-    .catch(error => {
-        console.log(error);
-});
-
-var tabButtons=document.querySelectorAll(".tabContainer .buttonContainer button");
-var tabPanels=document.querySelectorAll(".tabContainer  .tabPanel");
-
-  function showPanel(panelIndex,colorCode) {
-      tabButtons.forEach(function(node){
-          node.style.backgroundColor="";
-          node.style.color="";
-      });
-  
-  tabPanels.forEach(function(node){
-      node.style.display="none";
-  });
-  tabPanels[panelIndex].style.display="block";
-  tabPanels[panelIndex].style.backgroundColor=colorCode;
+search(name, "psn")
+function collector(name, platform) {
+    var newName = document.querySelector("#username")
+    newName.style.border = "none"
+    if (newName.value != ""){
+        search(newName.value, platform)
+        
+    }
+    else{
+        newName.style.border = "solid 3px red"
+    }
 }
-showPanel(0,'');
-
-// document.getElementById("defaultOpen-1").click();
-
-// function openTab(evt, tabName, boxName) {    
-//     var i, tabcontent, tablinks;
-
-//     var box = document.getElementById(boxName)
-
-//     tabcontent = box.getElementsByClassName("sg-tab-content");
-//     for (i = 0; i < tabcontent.length; i++) {
-//         tabcontent[i].style.display = "none";
-//     }
-
-//     tablinks = box.getElementsByClassName("tablinks");
-//     for (i = 0; i < tablinks.length; i++) {
-//         tablinks[i].className = tablinks[i].className.replace(" sg-current", "");
-//     }
-
-//     document.getElementById(tabName).style.display = "block";
-//     evt.currentTarget.className += " sg-current";
-// }
