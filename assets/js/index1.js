@@ -1,8 +1,39 @@
-let myHeaders = new Headers();
-myHeaders.append('Content-Type', 'image/jpeg');
+var legendDisp = document.getElementById("legends");
+var profileDiv = document.querySelector(".profileDiv");
+var overview = document.getElementById("dispTime");
+var xbox = document.querySelector(".xbox");
+var ps = document.querySelector(".psn");
+var origin = document.querySelector(".origin");
 
-fetch(
-        'https://public-api.tracker.gg/v2/csgo/standard/profile/steam/stepbro/segments/weapon?TRN-Api-Key=de89f9b3-26ff-433d-bcec-e3bbb477dfdd', {
+var name = "Daltoosh"
+
+search(name, "psn")
+function collector(name, platform) {
+    var newName = document.querySelector("#username")
+    newName.style.border = "none"
+    if (newName.value != ""){
+        search(newName.value, platform)
+        
+    }
+    else{
+        newName.style.border = "solid 3px red"
+    }
+}
+
+xbox.addEventListener('click',()=>{
+    collector(name, "Xbox")
+});
+ps.addEventListener('click',()=>{
+    collector(name, "psn")
+});
+origin.addEventListener('click',()=>{
+    collector(name, "origin")
+});
+
+
+function search(name, platform){
+    fetch(
+        `https://public-api.tracker.gg/v2/apex/standard/profile/${platform}/${name}?TRN-Api-Key=87d61054-b4ab-4722-b99b-35a2e7ee0392`, {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0',
                 Accept: 'application/json',
@@ -14,47 +45,81 @@ fetch(
 
     )
     .then(response => response.json())
-    .then(data => console.log(data)
+    .then(function(data){
+        if (Object.keys(data)[0] == 'errors'){
+            let i;
+            profileDiv.innerHTML = `<img class="profile mr-3 float-left" src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" style = "background-color: white;" width="12%" height="100%" alt="">
+        <h2>Player Not Found</h2>`;
+        overview.innerHTML = ''
+        legendDisp.innerHTML = ""
+            return;
+        }
 
+        overview.innerHTML=''
+        
+        profileDiv.innerHTML = `<img class="profile mr-3 float-left" src="${data["data"]["platformInfo"]["avatarUrl"]}" alt="" width="12%" height="100%">
+        <h2>${data["data"]["platformInfo"]["platformUserId"]}</h2>`;
+
+        // Overview part
+        var kil = "-"
+        var level = "-"
+        var dataElems = data["data"]["segments"];
+        if(dataElems[0]["stats"]["kills"]["rank"] != undefined || dataElems[0]["stats"]["kills"]["rank"] != null ){
+            kil = dataElems[0]["stats"]["kills"]["displayValue"]
+        
+        }
+        if(dataElems[0]["stats"]["level"]["rank"] != undefined || dataElems[0]["stats"]["level"]["rank"] != null ){
+            level= dataElems[0]["stats"]["level"]["rank"]
+        }
+        overview.innerHTML += ` <tr>
+                                    <td>Kills</td> 
+                                    <td>${kil}</td>  
+                                    <td>${dataElems[0]["stats"]["kills"]["percentile"]}%</td> 
+                                    <td>${dataElems[0]["stats"]["kills"]["displayValue"]}</td> 
+                                </tr>
+                                
+                                <tr>
+                                    <td>Level</td> 
+                                    <td>${level}</td>  
+                                    <td>${dataElems[0]["stats"]["level"]["percentile"]}%</td> 
+                                    <td>${dataElems[0]["stats"]["level"]["displayValue"]}</td> 
+                                </tr>                              
+                                `
+
+        // legends part
+                                        
+        
+        legendDisp.innerHTML = ""
+        for(i=1;i<dataElems.length;i++){
+            var kills = "-"
+            var matchesPlayed = "-"
+            var damage = "-"
+            if(dataElems[i]["stats"]["kills"] != undefined || dataElems[i]["stats"]["kills"] != null ){
+                kills = dataElems[i]["stats"]["kills"]["displayValue"]
+            
+            }
+            if(dataElems[i]["stats"]["matchesPlayed"] != undefined || dataElems[i]["stats"]["matchesPlayed"] != null ){
+                matchesPlayed = dataElems[i]["stats"]["matchesPlayed"]["displayValue"]
+            }
+            if(dataElems[i]["stats"]["damage"] != undefined || dataElems[i]["stats"]["damage"] != null ){
+                damage = dataElems[i]["stats"]["damage"]["displayValue"]
+            }
+            
+            legendDisp.innerHTML += `<tr>
+                                        <td id="imageTD"><img src="${dataElems[i]["metadata"]["imageUrl"]}" style="width:100%;  border-radius: 10%"></td>
+                                        <td>${dataElems[i]["attributes"]["id"]}</td>
+                                        <td>${dataElems[i]["metadata"]["name"]}</td>  
+                                        <td>${kills}</td>
+                                        <td>${matchesPlayed}</td>  
+                                        <td>${damage}</td>  
+                                        <td>${dataElems[i]["metadata"]["isActive"]}</td> 
+                                    </tr>`;
+                                                                          
+        }
+    }
+        
     )
     .catch(error => {
         console.log(error);
 });
-
-var tabButtons=document.querySelectorAll(".tabContainer .buttonContainer button");
-var tabPanels=document.querySelectorAll(".tabContainer  .tabPanel");
-
-  function showPanel(panelIndex,colorCode) {
-      tabButtons.forEach(function(node){
-          node.style.backgroundColor="";
-          node.style.color="";
-      });
-  
-  tabPanels.forEach(function(node){
-      node.style.display="none";
-  });
-  tabPanels[panelIndex].style.display="block";
-  tabPanels[panelIndex].style.backgroundColor=colorCode;
 }
-showPanel(0,'');
-
-// document.getElementById("defaultOpen-1").click();
-
-// function openTab(evt, tabName, boxName) {    
-//     var i, tabcontent, tablinks;
-
-//     var box = document.getElementById(boxName)
-
-//     tabcontent = box.getElementsByClassName("sg-tab-content");
-//     for (i = 0; i < tabcontent.length; i++) {
-//         tabcontent[i].style.display = "none";
-//     }
-
-//     tablinks = box.getElementsByClassName("tablinks");
-//     for (i = 0; i < tablinks.length; i++) {
-//         tablinks[i].className = tablinks[i].className.replace(" sg-current", "");
-//     }
-
-//     document.getElementById(tabName).style.display = "block";
-//     evt.currentTarget.className += " sg-current";
-// }
