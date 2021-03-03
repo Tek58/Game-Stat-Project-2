@@ -15,6 +15,7 @@ body{
     line-height: 1.5;
     text-align: left;
     overflow-x: hidden;
+    min-height: 100vh !important;
 }
 
 .search_icon{
@@ -76,10 +77,9 @@ a:hover{
     border-radius: 10%"
 }
 
-/* .footer{
+
+.footer{
     position: absolute;
-    bottom: 0;
-    align-items: center;
-    justify-content: center;
-    left: 40%;
-} */
+    bottom: 10px;
+    width: 100%;
+}
