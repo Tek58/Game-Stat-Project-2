@@ -11,6 +11,12 @@ body {
     line-height: 1.5;
     text-align: left;
 }
+
+.navbarNew{
+  background-color: black !important;
+  color: white;
+}
+
 .profileDiv{
     justify-content: center;
     align-items: center;
