@@ -19,28 +19,23 @@ body{
 }
 
 .search_icon{
-    color: rgb(255, 255, 255);
     margin-top: 1%;
-    background-color: #ffffff00;
     border: 0;
 }
 #ps, #xbox, #origin{
     color: tomato;
 }
-#origin:hover{
-    color: rgb(252, 252, 252);
+/* #origin:hover{
+    color: #00a2ed;
 }
 #ps:hover{
         color: rgb(120, 71, 255);
 }
 #xbox:hover{
         color: rgb(71, 255, 178);
-}
+} */
 
 
-.search_icon:hover{
-    color: chartreuse;
-}
 
 a{
     text-decoration: none;
@@ -85,25 +80,53 @@ a:hover{
 }
 #searchPlayer{
     position: relative;
+    width: 80%;
+    left: 10%;
     
 }
-.platformContainer{
+.platformContainer1{
     z-index: 100;
-    size: 2px;
+    display: inline;
     position: absolute;
-    top: 30%; 
-    right: 20px;
+    top: 0; 
+    right: 5px;
     font-size: 1em;
     opacity:.5;
-    color:#0047ab;
-    transition: all 0.4s ease;
+    -webkit-transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+    transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
   }
+  .platformContainer2{
+    z-index: 100;
+    display: inline;
+    position: absolute;
+    top: 0; 
+    right: 45px;
+    font-size: 1em;
+    opacity:.5;
+      -webkit-transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+      transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+  }
+  .platformContainer3{
+    z-index: 100;
+    display: inline;
+    position: absolute;
+    top: 0; 
+    right: 85px;
+    font-size: 1em;
+    opacity:.5;
+      -webkit-transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+      transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+  }
+  .platformContainer1:hover,.platformContainer2:hover,.platformContainer3:hover{
+      opacity: 1 !important;
+  } 
+
   .search_input{
       border-radius: 10px;
       background: white !important;
       color: black !important;
       -webkit-transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
-      transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);;
+      transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
   }
   .search_input:focus{
       border: 2px solid rgb(228, 20, 5);
