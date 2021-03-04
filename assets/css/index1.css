@@ -125,7 +125,16 @@ a:hover{
   .platformContainer1:hover,.platformContainer2:hover,.platformContainer3:hover{
       opacity: 1 !important;
   } 
-
+  .loadingicons{
+    z-index: 100;
+    display:none;
+    position: absolute;
+    top: 15px; 
+    right: 125px;
+    font-size: 1em;;
+    -webkit-transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+    transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+  }
   .search_input{
       border-radius: 10px;
       background: white !important;

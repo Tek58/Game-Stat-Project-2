@@ -4,6 +4,7 @@ var overview = document.getElementById("dispTime");
 var xbox = document.querySelector(".xbox");
 var ps = document.querySelector(".psn");
 var origin = document.querySelector(".origin");
+var loadingIcons = document.querySelector(".loadingicons")
 
 var name = "Daltoosh"
 
@@ -32,6 +33,7 @@ origin.addEventListener('click',()=>{
 
 
 function search(name, platform){
+    loadingIcons.style.display = "inline"
     fetch(
         `https://public-api.tracker.gg/v2/apex/standard/profile/${platform}/${name}?TRN-Api-Key=87d61054-b4ab-4722-b99b-35a2e7ee0392`, {
             headers: {
@@ -44,7 +46,10 @@ function search(name, platform){
         }
 
     )
-    .then(response => response.json())
+    .then(response =>{
+        loadingIcons.style.display = "none"
+        return response.json()
+    } )
     .then(function(data){
         if (Object.keys(data)[0] == 'errors'){
             let i;
