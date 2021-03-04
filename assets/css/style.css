@@ -89,12 +89,6 @@ table {
   height: 30%;
   border-radius: 30%;
 }
-.search_icon{
-  color: rgb(255, 255, 255);
-  position: absolute;
-  padding-left: 0.7%;
-  margin-top: 0.7%;
-}
 a{
   text-decoration: none;
   color: rgb(228, 228, 228);
@@ -114,4 +108,48 @@ a:hover{
 
 .avatarTitles th{
   text-align: center;
+}
+
+.searchContainer{
+  background: none;
+  border: none;
+  z-index: 100;
+  display: inline;
+  position: absolute;
+  top: 17%; 
+  right: 5px;
+  font-size: 1em;
+  opacity:.5;
+    -webkit-transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+    transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+}
+.searchContainer:hover{
+  background: none;
+
+    opacity: 1 !important;
+} 
+.loadingicons{
+  z-index: 100;
+  position: absolute;
+  top: 25%; 
+  right: 50px;
+  font-size: 1em;;
+  -webkit-transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+  transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+}
+.search_input{
+    border-radius: 10px;
+    background: white !important;
+    color: black !important;
+    -webkit-transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+    transition: all 1s cubic-bezier(.25,1,.25,1),background-color 1s cubic-bezier(.25,1,.25,1);
+}
+.search_input:focus{
+    border: 2px solid rgb(228, 20, 5);
+}
+#searchPlayer{
+  position: relative;
+  width: 80%;
+  left: 10%;
+  
 }

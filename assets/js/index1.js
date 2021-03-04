@@ -14,7 +14,6 @@ function collector(name, platform) {
     newName.style.border = "none"
     if (newName.value != ""){
         search(newName.value, platform)
-        
     }
     else{
         newName.style.border = "solid 3px red"

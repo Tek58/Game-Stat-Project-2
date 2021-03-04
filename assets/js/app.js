@@ -15,7 +15,7 @@ var timePlayed = document.getElementById("dispTime");
 var secTable = document.getElementById("secondTable");
 var thirdTab = document.getElementById("thirdTable");
 var fouthTab = document.getElementById("fourthTable");
-
+var loadingIcons = document.querySelector(".loadingicons")
 
 
 var name = "StepBro"
@@ -24,10 +24,14 @@ stat(name)
 detail(name)
 search.addEventListener('click',() => {
     var newName = document.querySelector("#username")
-    if (newName.innerHTML != null ){
+
+    if (newName.innerHTML != null && newName.value ){
         stat(newName.value)
         apiFetch(newName.value)
         detail(newName.value)
+    }
+    else{
+        newName.style.border = "solid 3px red"
     }
 }) 
 
@@ -71,7 +75,7 @@ function apiFetch(name){
 });
 }
 function stat(name){
-
+    loadingIcons.style.display = "inline"
     fetch(
         `https://public-api.tracker.gg/v2/csgo/standard/search?TRN-Api-Key=de89f9b3-26ff-433d-bcec-e3bbb477dfdd&platform=steam&query=${name}`, {
             headers: {
@@ -84,7 +88,10 @@ function stat(name){
         }
 
     )
-    .then(response => response.json())
+    .then(response => {
+      loadingIcons.style.display = "none";
+      return response.json();
+    } )
         .then(function(data){
             profileDiv.innerHTML = `<img class="profile mr-3 float-left" src="${data["data"][0]["avatarUrl"]}" alt="">
         <h2>${name.toUpperCase()}</h2>`;
