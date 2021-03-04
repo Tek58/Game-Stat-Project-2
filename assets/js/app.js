@@ -18,7 +18,7 @@ var fouthTab = document.getElementById("fourthTable");
 
 
 
-var name = "stepbro"
+var name = "StepBro"
 apiFetch(name)
 stat(name)
 detail(name)

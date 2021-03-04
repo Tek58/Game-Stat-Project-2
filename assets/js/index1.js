@@ -48,8 +48,10 @@ function search(name, platform){
     .then(function(data){
         if (Object.keys(data)[0] == 'errors'){
             let i;
-            profileDiv.innerHTML = `<img class="profile mr-3 float-left" src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" style = "background-color: white;" width="12%" height="100%" alt="">
-        <h2>Player Not Found</h2>`;
+        profileDiv.innerHTML = `<img class="align-self-start profile mr-3 float-left" src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" style = "background-color: white;" width="12%" height="100%" alt="">
+        <div class="media-body">
+        <h2 class="mt-0" >Player Not Found</h2>
+      </div>`;
         overview.innerHTML = ''
         legendDisp.innerHTML = ""
             return;
@@ -57,8 +59,10 @@ function search(name, platform){
 
         overview.innerHTML=''
         
-        profileDiv.innerHTML = `<img class="profile mr-3 float-left" src="${data["data"]["platformInfo"]["avatarUrl"]}" alt="" width="12%" height="100%">
-        <h2>${data["data"]["platformInfo"]["platformUserId"]}</h2>`;
+        profileDiv.innerHTML = `<img class="align-self-start profile mr-3 float-left" src="${data["data"]["platformInfo"]["avatarUrl"]}" alt="" width="12%" height="100%">
+        <div class="media-body">
+        <h2 class="mt-0" >${data["data"]["platformInfo"]["platformUserId"]}</h2>
+      </div>`;
 
         // Overview part
         var kil = "-"

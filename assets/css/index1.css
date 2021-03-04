@@ -131,7 +131,27 @@ a:hover{
   .search_input:focus{
       border: 2px solid rgb(228, 20, 5);
 }
-  /* .search_input .field:focus-within .icons{
+.profileDiv{
+    position: relative;
+    width: 400px;
+    color: white !important;
+    background-color: black !important;
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+
+}
+.profileDiv img{
+    display: block;
+    padding-top: 40px !important;
+    width: 200px;
+}
+.profileDiv h2{
+    display: block;
+    color: white;
+    position: absolute;
+    top: 50%;
+}
+
+/* .search_input .field:focus-within .icons{
     opacity: 1;
   } */
   
