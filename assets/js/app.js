@@ -18,7 +18,7 @@ var fouthTab = document.getElementById("fourthTable");
 var loadingIcons = document.querySelector(".loadingicons")
 
 
-var name = "StepBro"
+var name = "Akali"
 apiFetch(name)
 stat(name)
 detail(name)

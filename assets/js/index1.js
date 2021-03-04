@@ -6,7 +6,7 @@ var ps = document.querySelector(".psn");
 var origin = document.querySelector(".origin");
 var loadingIcons = document.querySelector(".loadingicons")
 
-var name = "Daltoosh"
+var name = "DV_effect"
 
 search(name, "psn")
 function collector(name, platform) {

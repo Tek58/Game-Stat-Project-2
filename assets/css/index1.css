@@ -1,8 +1,8 @@
 body{
-    background-image: url("/assets/images/background.jpg");
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/assets/images/background2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position:center;
+    background-position: center;
     background-attachment: fixed;
     opacity: 0.8;
     color: white; 
